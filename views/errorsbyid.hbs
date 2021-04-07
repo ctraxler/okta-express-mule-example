@@ -1,0 +1,35 @@
+
+
+{{#if rows}}
+  <H3>LOG ENTRIES FOR ID: {{id}}</H3>
+  <table>
+    <tr>
+      <th>Application Id</th>
+      <th>Application Name</th>
+      <th>Application Version</th>
+      <th>Environment</th>
+      <th>Correlation Id</th>
+      <th>Message</th>
+      <th>Class</th>
+      <th>Priority</th>
+      <th>Trace Point</th>
+      <th>Time Stamp</th>
+    </tr>
+    {{#each rows}}
+      <tr>
+       <td class="pad10">{{this.application_id}}</td>
+       <td>{{this.application_name}}</td>
+       <td>{{this.application_version}}</td>
+       <td>{{this.environment}}</td>
+       <td>{{this.correlation_id}}</td>
+       <td>{{this.message}}</td>
+       <td>{{this.class}}</td>
+       <td>{{this.priority}}</td>
+       <td>{{this.trace_point}}</td>
+       <td>{{this.timestamp}}</td>
+      </tr>
+    {{/each}}
+  <table>
+{{else}}
+  <H3>NO LOG ENTRIES FOR ID: {{id}}</H3>
+{{/if}}
